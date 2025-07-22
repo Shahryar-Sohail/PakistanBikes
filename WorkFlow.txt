@@ -1,0 +1,10 @@
+Day	Task
+1	✅ Project setup: React, Tailwind, Node/Express, MongoDB Atlas setup
+2	✅ Backend - MVC structure, Bike model, Express routes
+3	✅ Backend - Complete CRUD, Seed bike data, Test in Postman
+4	✅ Frontend - Fetch data, List bikes with card UI + Tailwind
+5	✅ Add filters (brand, cc, price), sorting, search
+6	✅ Add comparison feature, basic animation with Framer Motion
+7	✅ Polish UI, responsiveness, testing
+8	✅ Deploy backend to Railway, frontend to Vercel
+9-10	✅ Add extras (pagination, loading skeleton, dark mode, 3D if any)
