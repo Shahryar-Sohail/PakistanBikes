@@ -8,3 +8,11 @@ Day	Task
 7	✅ Polish UI, responsiveness, testing
 8	✅ Deploy backend to Railway, frontend to Vercel
 9-10	✅ Add extras (pagination, loading skeleton, dark mode, 3D if any)
+
+
+
+
+
+
+
+

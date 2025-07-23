@@ -9,6 +9,7 @@ export default {
     extend: {},
   },
   plugins: [
-    require('flowbite/plugin') // 👈 plugin included
+    require('flowbite/plugin'), // 👈 plugin included
+    require("daisyui") // 👈 plugin included
   ],
 }
