@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PK Bikes Admin Panel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#ffb4a9",
+                      "on-secondary-fixed-variant": "#005228",
+                      "secondary-fixed-dim": "#7bda96",
+                      "on-primary-fixed-variant": "#8e130c",
+                      "surface-variant": "#e4e2e4",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#dcd9dc",
+                      "secondary-container": "#94f4ad",
+                      "on-surface-variant": "#59413d",
+                      "on-primary-container": "#ffe5e1",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-container-highest": "#e4e2e4",
+                      "primary-fixed-dim": "#ffb4a9",
+                      "tertiary-fixed": "#c0e8ff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#004d66",
+                      "tertiary-fixed-dim": "#80d0f8",
+                      "tertiary-container": "#007296",
+                      "on-tertiary-container": "#d3eeff",
+                      "surface-bright": "#fcf8fb",
+                      "surface-container": "#f0edef",
+                      "surface-container-low": "#f6f3f5",
+                      "background": "#fcf8fb",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed": "#00210d",
+                      "on-secondary": "#ffffff",
+                      "primary": "#9e2016",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "surface": "#fcf8fb",
+                      "tertiary": "#005875",
+                      "on-secondary-container": "#00723a",
+                      "outline-variant": "#e1bfb9",
+                      "surface-container-high": "#eae7ea",
+                      "on-primary-fixed": "#410000",
+                      "primary-fixed": "#ffdad5",
+                      "on-background": "#1b1b1d",
+                      "secondary-fixed": "#96f7b0",
+                      "on-tertiary-fixed": "#001e2b",
+                      "primary-container": "#c0392b",
+                      "secondary": "#006d38",
+                      "inverse-surface": "#303032",
+                      "surface-tint": "#b02d21",
+                      "on-surface": "#1b1b1d",
+                      "error-container": "#ffdad6",
+                      "outline": "#8d706c",
+                      "dark-charcoal": "#1C1C1E",
+                      "forest-green": "#006d38"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "unit": "4px",
+                      "margin-desktop": "48px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg-mobile": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+      </script>
+<style>
+        .kinetic-lift {
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .kinetic-lift:hover {
+            transform: translateY(-4px);
+            border-color: #9e2016; /* primary */
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md h-screen overflow-hidden flex">
+<!-- Admin Sidebar -->
+<aside class="w-64 bg-dark-charcoal text-surface-container-lowest flex-shrink-0 flex flex-col hidden md:flex h-full border-r border-outline-variant/10">
+<div class="p-6 border-b border-outline-variant/10">
+<h1 class="font-headline-md text-headline-md text-surface-container-lowest font-bold">PK Bikes Admin</h1>
+</div>
+<nav class="flex-1 py-4 flex flex-col gap-2 px-2">
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-4 py-3 bg-surface-variant/10 rounded-lg border-l-4 border-forest-green text-surface-container-lowest" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant/5 rounded-lg border-l-4 border-transparent hover:border-surface-variant/20 text-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="two_wheeler">two_wheeler</span>
+<span class="font-label-md text-label-md">Bikes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant/5 rounded-lg border-l-4 border-transparent hover:border-surface-variant/20 text-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant/5 rounded-lg border-l-4 border-transparent hover:border-surface-variant/20 text-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="reviews">reviews</span>
+<span class="font-label-md text-label-md">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 hover:bg-surface-variant/5 rounded-lg border-l-4 border-transparent hover:border-surface-variant/20 text-surface-variant transition-colors mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background">
+<!-- Top App Bar (Mobile Nav + Header) -->
+<header class="h-16 border-b border-dark-charcoal/10 bg-surface-container-lowest px-4 md:px-8 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-headline-md text-headline-md">Dashboard Overview</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-dark-charcoal overflow-hidden border border-outline-variant/10">
+<img alt="Admin Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD_Mq8eCyC2CHob4vO9KwMGSJ0i0Z2F1nLyT8VAs5ryZR6uMcotj89QI-kwEGX2vCOlWo7junDfjcGrOJhMFE3UazaPjeBrTdg9uQ6psN1FBpL9KwtcwsPtrd6S-uSDL27xsWctm0Y3Puw1QM7Zhd8shqR0VKhT9PdW74PQI9tjeio407PNUjDGlvu7LFgk3zOSKPx8Q6UmYjdVm2ExECTGHmflWcOAzFLey11ZciflcgiH4-etzmxbVCJW5-Vjtl_vArGIdD7-j_8"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 space-y-8">
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-dark-charcoal/10 kinetic-lift flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Bikes</span>
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="two_wheeler">two_wheeler</span>
+</div>
+</div>
+<span class="font-headline-lg text-headline-lg">1,248</span>
+<span class="font-label-sm text-label-sm text-forest-green flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+                        +12% from last month
+                    </span>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-dark-charcoal/10 kinetic-lift flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant">Active Users</span>
+<div class="p-2 bg-tertiary/10 rounded-lg text-tertiary">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+</div>
+<span class="font-headline-lg text-headline-lg">8,592</span>
+<span class="font-label-sm text-label-sm text-forest-green flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+                        +5.2% from last month
+                    </span>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-dark-charcoal/10 kinetic-lift flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant">Reviews</span>
+<div class="p-2 bg-secondary/10 rounded-lg text-secondary">
+<span class="material-symbols-outlined" data-icon="reviews">reviews</span>
+</div>
+</div>
+<span class="font-headline-lg text-headline-lg">4,120</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_flat</span>
+                        Steady
+                    </span>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-dark-charcoal/10 kinetic-lift flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant">Most Viewed</span>
+<div class="p-2 bg-error/10 rounded-lg text-error">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</div>
+</div>
+<span class="font-headline-md text-headline-md truncate">Honda CG 125</span>
+<span class="font-label-sm text-label-sm text-forest-green flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+                        24k views today
+                    </span>
+</div>
+</div>
+<!-- Bikes Data Table Section -->
+<div class="bg-surface-container-lowest rounded-xl border border-dark-charcoal/10 overflow-hidden flex flex-col">
+<!-- Table Header Actions -->
+<div class="p-4 md:p-6 border-b border-dark-charcoal/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<h3 class="font-headline-md text-headline-md">Bike Inventory</h3>
+<div class="flex items-center gap-3 w-full md:w-auto">
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 20px;">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container border border-dark-charcoal/10 rounded-lg font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" placeholder="Search bikes..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2 hover:bg-primary/90 transition-colors shrink-0">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+                            Add Bike
+                        </button>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-dark-charcoal/10">
+<th class="p-4 font-label-md text-label-md text-on-surface-variant font-medium">Model</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant font-medium hidden sm:table-cell">Brand</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant font-medium">Engine</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant font-medium hidden md:table-cell">Price (PKR)</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant font-medium">Status</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-dark-charcoal/10 font-body-md text-body-md">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container border border-dark-charcoal/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant">two_wheeler</span>
+</div>
+<span class="font-medium">CG 125</span>
+</div>
+</td>
+<td class="p-4 hidden sm:table-cell">Honda</td>
+<td class="p-4">
+<span class="inline-block px-2 py-1 bg-dark-charcoal text-surface-container-lowest rounded-full font-label-sm text-label-sm">125cc</span>
+</td>
+<td class="p-4 hidden md:table-cell">234,900</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 bg-forest-green/10 text-forest-green rounded-full font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-forest-green"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded-md hover:bg-primary/10">
+<span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error transition-colors rounded-md hover:bg-error/10">
+<span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container border border-dark-charcoal/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant">two_wheeler</span>
+</div>
+<span class="font-medium">YBR 125</span>
+</div>
+</td>
+<td class="p-4 hidden sm:table-cell">Yamaha</td>
+<td class="p-4">
+<span class="inline-block px-2 py-1 bg-dark-charcoal text-surface-container-lowest rounded-full font-label-sm text-label-sm">125cc</span>
+</td>
+<td class="p-4 hidden md:table-cell">435,500</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 bg-forest-green/10 text-forest-green rounded-full font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-forest-green"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded-md hover:bg-primary/10">
+<span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error transition-colors rounded-md hover:bg-error/10">
+<span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container border border-dark-charcoal/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant">two_wheeler</span>
+</div>
+<span class="font-medium">GS 150</span>
+</div>
+</td>
+<td class="p-4 hidden sm:table-cell">Suzuki</td>
+<td class="p-4">
+<span class="inline-block px-2 py-1 bg-dark-charcoal text-surface-container-lowest rounded-full font-label-sm text-label-sm">150cc</span>
+</td>
+<td class="p-4 hidden md:table-cell">382,000</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 bg-surface-variant text-on-surface-variant rounded-full font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span>
+                                        Draft
+                                    </span>
+</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded-md hover:bg-primary/10">
+<span class="material-symbols-outlined" style="font-size: 20px;">edit</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error transition-colors rounded-md hover:bg-error/10">
+<span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="p-4 border-t border-dark-charcoal/10 flex justify-between items-center bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 1 to 3 of 1,248</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-dark-charcoal/10 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-variant transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined" style="font-size: 18px;">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-primary bg-primary text-on-primary font-label-sm text-label-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-dark-charcoal/10 bg-surface-container-lowest text-on-surface hover:bg-surface-variant transition-colors font-label-sm text-label-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-dark-charcoal/10 bg-surface-container-lowest text-on-surface hover:bg-surface-variant transition-colors font-label-sm text-label-sm">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-dark-charcoal/10 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" style="font-size: 18px;">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

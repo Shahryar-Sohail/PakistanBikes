@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PK Bikes - Pakistan's #1 Bike Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb4a9",
+                        "on-secondary-fixed-variant": "#005228",
+                        "secondary-fixed-dim": "#7bda96",
+                        "on-primary-fixed-variant": "#8e130c",
+                        "surface-variant": "#e4e2e4",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dcd9dc",
+                        "secondary-container": "#94f4ad",
+                        "on-surface-variant": "#59413d",
+                        "on-primary-container": "#ffe5e1",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-highest": "#e4e2e4",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "tertiary-fixed": "#c0e8ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004d66",
+                        "tertiary-fixed-dim": "#80d0f8",
+                        "tertiary-container": "#007296",
+                        "on-tertiary-container": "#d3eeff",
+                        "surface-bright": "#fcf8fb",
+                        "surface-container": "#f0edef",
+                        "surface-container-low": "#f6f3f5",
+                        "background": "#fcf8fb",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#00210d",
+                        "on-secondary": "#ffffff",
+                        "primary": "#9e2016",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "surface": "#fcf8fb",
+                        "tertiary": "#005875",
+                        "on-secondary-container": "#00723a",
+                        "outline-variant": "#e1bfb9",
+                        "surface-container-high": "#eae7ea",
+                        "on-primary-fixed": "#410000",
+                        "primary-fixed": "#ffdad5",
+                        "on-background": "#1b1b1d",
+                        "secondary-fixed": "#96f7b0",
+                        "on-tertiary-fixed": "#001e2b",
+                        "primary-container": "#c0392b",
+                        "secondary": "#006d38",
+                        "inverse-surface": "#303032",
+                        "surface-tint": "#b02d21",
+                        "on-surface": "#1b1b1d",
+                        "error-container": "#ffdad6",
+                        "outline": "#8d706c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "4px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container flex flex-col min-h-screen">
+<!-- TopNavBar Component -->
+<header class="bg-surface-container-lowest dark:bg-surface-dim docked full-width top-0 sticky border-b border-outline-variant/10 backdrop-blur-md flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto z-50 transition-all duration-300">
+<a class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight" href="#">PK Bikes</a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1 transition-all" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Compare</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Price Tracker</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Bike Finder Quiz</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">About</a>
+</nav>
+<a class="hidden md:inline-flex items-center justify-center font-label-md text-label-md text-primary hover:text-primary-container transition-colors duration-200 px-4 py-2 border border-outline-variant/30 rounded-lg hover:border-primary/50" href="#">Login / Register</a>
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<main class="flex-grow w-full">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[614px] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-16 md:py-24 bg-surface-container-lowest overflow-hidden border-b border-outline-variant/10">
+<!-- Background Accent -->
+<div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#1b1b1d 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="absolute -top-[20%] -right-[10%] w-[50%] h-[80%] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="relative z-10 max-w-container-max mx-auto flex flex-col items-center text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full bg-surface-container-low border border-outline-variant/20 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Updated for 2024 Models</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 max-w-4xl tracking-tight">
+                    Pakistan's #1 Bike Directory<span class="relative inline-block ml-1"><span class="absolute -bottom-2 left-0 w-full h-2 bg-primary transform -skew-x-12 opacity-80"></span></span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
+                    Find specs, prices, reviews and sounds of every bike in Pakistan. Engineered for precision and national kinetic performance.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="px-8 py-3 bg-secondary text-on-secondary font-label-md text-label-md rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group">
+                        Explore Bikes
+                        <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="px-8 py-3 bg-transparent text-on-surface font-label-md text-label-md rounded-lg border border-outline-variant hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="compare_arrows">compare_arrows</span>
+                        Compare Bikes
+                    </button>
+</div>
+</div>
+</section>
+<!-- Filter Bar -->
+<section class="w-full bg-surface-container border-b border-outline-variant/10 sticky top-[73px] z-40 backdrop-blur-md bg-opacity-90 py-4 px-margin-mobile md:px-margin-desktop shadow-sm">
+<div class="max-w-container-max mx-auto flex flex-col lg:flex-row gap-4 items-center">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full flex-grow">
+<!-- Brand Dropdown -->
+<div class="relative w-full group">
+<select class="w-full appearance-none bg-surface text-on-surface font-body-md text-body-md py-3 pl-4 pr-10 rounded-lg border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none cursor-pointer transition-colors shadow-sm">
+<option value="">All Brands</option>
+<option value="honda">Honda</option>
+<option value="yamaha">Yamaha</option>
+<option value="suzuki">Suzuki</option>
+<option value="united">United</option>
+<option value="road-prince">Road Prince</option>
+<option value="ravi">Ravi</option>
+<option value="super-power">Super Power</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none group-focus-within:text-primary" data-icon="expand_more">expand_more</span>
+</div>
+<!-- CC Range Dropdown -->
+<div class="relative w-full group">
+<select class="w-full appearance-none bg-surface text-on-surface font-body-md text-body-md py-3 pl-4 pr-10 rounded-lg border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none cursor-pointer transition-colors shadow-sm">
+<option value="">CC Range</option>
+<option value="70">70cc</option>
+<option value="100">100cc</option>
+<option value="125">125cc</option>
+<option value="150">150cc</option>
+<option value="200+">200cc+</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none group-focus-within:text-primary" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Price Range Dropdown -->
+<div class="relative w-full group">
+<select class="w-full appearance-none bg-surface text-on-surface font-body-md text-body-md py-3 pl-4 pr-10 rounded-lg border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none cursor-pointer transition-colors shadow-sm">
+<option value="">Price Range</option>
+<option value="under-100k">Under 100k</option>
+<option value="100k-200k">100k - 200k</option>
+<option value="200k-300k">200k - 300k</option>
+<option value="300k+">300k+</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none group-focus-within:text-primary" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Fuel Average Dropdown -->
+<div class="relative w-full group">
+<select class="w-full appearance-none bg-surface text-on-surface font-body-md text-body-md py-3 pl-4 pr-10 rounded-lg border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none cursor-pointer transition-colors shadow-sm">
+<option value="">Fuel Average</option>
+<option value="40+">40+ km/l</option>
+<option value="50+">50+ km/l</option>
+<option value="60+">60+ km/l</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none group-focus-within:text-primary" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<button class="w-full lg:w-auto px-6 py-3 bg-primary text-on-primary rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm focus:ring-2 focus:ring-offset-2 focus:ring-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="search" data-weight="fill">search</span>
+<span class="font-label-md text-label-md">Search</span>
+</button>
+</div>
+</section>
+<!-- Bike Grid Section -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-16 bg-background">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2 tracking-tight">Featured Models</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Top rated machines for the national grid.</p>
+</div>
+<a class="hidden sm:flex items-center gap-1 font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="#">
+                        View All <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Honda CD70 -->
+<article class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] hover:border-primary shadow-sm hover:shadow-md flex flex-col h-full relative">
+<div class="absolute top-4 left-4 z-10 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="fiber_new">fiber_new</span> New
+                        </div>
+<div class="relative w-full pt-[60%] bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-surface-variant to-surface-container-low">
+<!-- Placeholder for Honda CD70 Image -->
+<img alt="A sleek, red utility motorcycle parked on a clean, modern concrete floor. The lighting is studio quality, highlighting the chrome accents and red fuel tank. The aesthetic is crisp, technical, and slightly moody, fitting a modern corporate directory. The bike looks brand new and ready for the road." class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, red utility motorcycle parked on a clean, modern concrete floor. The lighting is studio quality, highlighting the chrome accents and red fuel tank. The aesthetic is crisp, technical, and slightly moody, fitting a modern corporate directory. The bike looks brand new and ready for the road." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYwtBVkEX_M_dv6Q9yUvzmcw9fA6S9fL2Xr_VkE2XSAZU_BsdaaXYh97aDjE5ckPzZmmgVatVIzOCfxfZiVkYPRl3CbqmedDmaDMGkSq722Gn_9AcTIKV3Ch67GFnjZ8kGRs2yspUXPp-5fOi3XnZN7F8KYGWYGV2yAhJjsAbVpOYSRyq9mHmTHAUztPjz9BsdpbolRRgxfhfCeCdOJXvxfIjk7vU5tVhjsi9emzxJVTv0LdcaE_Jh94vDU5EvlXf9ozrWjJpICZGe"/>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors tracking-tight leading-tight">Honda CD 70</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest text-on-surface px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-outline-variant/10">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="speed">speed</span> 72cc
+                                </span>
+<span class="bg-surface-container-highest text-on-surface px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-outline-variant/10">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="payments">payments</span> Rs. 157,900
+                                </span>
+<span class="bg-secondary/10 text-secondary-container px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-secondary/20 ml-auto">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="local_gas_station">local_gas_station</span> 60+ km/l
+                                </span>
+</div>
+<div class="mt-auto space-y-3">
+<button class="w-full flex items-center justify-center gap-2 py-2 border border-primary/30 text-primary font-label-md text-label-md rounded-lg hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_circle">play_circle</span> Play Sound
+                                </button>
+<button class="w-full py-3 bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+                                    View Details
+                                </button>
+</div>
+</div>
+</article>
+<!-- Card 2: Yamaha YBR 125G -->
+<article class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] hover:border-primary shadow-sm hover:shadow-md flex flex-col h-full relative">
+<div class="absolute top-4 left-4 z-10 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="fiber_new">fiber_new</span> New
+                        </div>
+<div class="relative w-full pt-[60%] bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-surface-variant to-surface-container-low">
+<!-- Placeholder for Yamaha YBR Image -->
+<img alt="A rugged, matte black adventure commuter motorcycle angled slightly, parked on an urban textured surface. Strong directional lighting emphasizes the muscular tank and off-road tires. The background is a clean, neutral gray to keep focus on the technical details of the bike. The overall vibe is premium, mechanical, and modern." class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A rugged, matte black adventure commuter motorcycle angled slightly, parked on an urban textured surface. Strong directional lighting emphasizes the muscular tank and off-road tires. The background is a clean, neutral gray to keep focus on the technical details of the bike. The overall vibe is premium, mechanical, and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_MMZA2GY3FC-Ck_MvMTn2vryichU5ZMP3o7TQE7OH6unhg_XMGCvWO9Sj_XbmEXw1zRUMLFSfvFyGDXMRQD95OQ77tpdCifBFEBOHH1a-XFdRDz9WVs0VuyyS7L0LyNagG6X7fqInlX-CYxzKSRsZaIUPtxebIV32x3wny1rC1xN0Au0bMJDAsxfrQnvxxeaFpegfitD2oF_K6LxpCCNSiZmXpAftJ5HoSs5x_xQ5AkPkBA_yZeJ75n9aucwEFHXO3ZjtVtpfW-Eq"/>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors tracking-tight leading-tight">Yamaha YBR 125G</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest text-on-surface px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-outline-variant/10">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="speed">speed</span> 124cc
+                                </span>
+<span class="bg-surface-container-highest text-on-surface px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-outline-variant/10">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="payments">payments</span> Rs. 484,000
+                                </span>
+<span class="bg-secondary/10 text-secondary-container px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-secondary/20 ml-auto">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="local_gas_station">local_gas_station</span> 45+ km/l
+                                </span>
+</div>
+<div class="mt-auto space-y-3">
+<button class="w-full flex items-center justify-center gap-2 py-2 border border-primary/30 text-primary font-label-md text-label-md rounded-lg hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_circle">play_circle</span> Play Sound
+                                </button>
+<button class="w-full py-3 bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+                                    View Details
+                                </button>
+</div>
+</div>
+</article>
+<!-- Card 3: Suzuki GR 150 -->
+<article class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden transition-all duration-300 hover:translate-y-[-4px] hover:border-primary shadow-sm hover:shadow-md flex flex-col h-full relative">
+<div class="absolute top-4 left-4 z-10 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="fiber_new">fiber_new</span> New
+                        </div>
+<div class="relative w-full pt-[60%] bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-surface-variant to-surface-container-low">
+<!-- Placeholder for Suzuki GR 150 Image -->
+<img alt="A stylish, sporty 150cc motorcycle in a glossy blue finish. It is parked diagonally in a minimalist, high-key studio environment. The lighting casts subtle reflections on the tank and exhaust, highlighting its aerodynamic design. The image is high contrast, sharp, and fits a premium product directory aesthetic." class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A stylish, sporty 150cc motorcycle in a glossy blue finish. It is parked diagonally in a minimalist, high-key studio environment. The lighting casts subtle reflections on the tank and exhaust, highlighting its aerodynamic design. The image is high contrast, sharp, and fits a premium product directory aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTaSZRVEe-IhBnxmCy56gaC7RbKfmT1-hqbe99MgQE1NvGjxZj1VCjcJuC5sYMNmewhyZ9-p8F0yuXHa-m8ZJyY9khUqtJU8GreTT8_IrVlq5L3VEYNMnJEImIlbQlA7x_zVGfDwGrD72glL9JkYgWf9QLAsW_ZUtd46XjVO7qJlEBUx0x7cWsW0Kd3V0TSb2ubYI1uaas1lclZMvTxJJKl2ao-caOsun1Kkmhj6xF56uTTQUP3mM6WWC_kRGqjv8zXYN-ir0S8Wba"/>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors tracking-tight leading-tight">Suzuki GR 150</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest text-on-surface px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-outline-variant/10">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="speed">speed</span> 150cc
+                                </span>
+<span class="bg-surface-container-highest text-on-surface px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-outline-variant/10">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="payments">payments</span> Rs. 547,000
+                                </span>
+<span class="bg-secondary/10 text-secondary-container px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-secondary/20 ml-auto">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="local_gas_station">local_gas_station</span> 40+ km/l
+                                </span>
+</div>
+<div class="mt-auto space-y-3">
+<button class="w-full flex items-center justify-center gap-2 py-2 border border-primary/30 text-primary font-label-md text-label-md rounded-lg hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_circle">play_circle</span> Play Sound
+                                </button>
+<button class="w-full py-3 bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+                                    View Details
+                                </button>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-12 text-center sm:hidden">
+<button class="w-full py-3 border border-outline-variant text-on-surface font-label-md text-label-md rounded-lg hover:border-primary hover:text-primary transition-colors flex justify-center items-center gap-2">
+                        View All Models <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface mt-auto border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-headline-md font-headline-md font-bold text-on-surface dark:text-inverse-on-surface">PK Bikes</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">© 2024 Pakistan Bikes. Engineered for National Kinetic Performance.</p>
+</div>
+<nav class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Contact Us</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Dealer Network</a>
+</nav>
+</div>
+</footer>
+</body></html>

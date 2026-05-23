@@ -1,19 +1,22 @@
-import { useState } from 'react'
-import './index.css'
-import 'flowbite'
-import 'flowbite/dist/flowbite.min.css'
-import Navbar from './components/Navbar'
-
+import { AuthProvider } from "./context/AuthContext";
+import { CompareProvider } from "./context/CompareContext";
+import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
+import Home from "./pages/user/Home";
+import "./index.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <Navbar />
-    
-    </>
-  )
+    <AuthProvider>
+      <CompareProvider>
+        <Navbar />
+        <main>
+          <Home />
+        </main>
+        <Footer />
+      </CompareProvider>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

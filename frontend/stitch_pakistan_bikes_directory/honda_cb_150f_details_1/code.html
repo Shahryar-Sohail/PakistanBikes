@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PK Bikes - Honda CB 150F</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#ffb4a9",
+                      "on-secondary-fixed-variant": "#005228",
+                      "secondary-fixed-dim": "#7bda96",
+                      "on-primary-fixed-variant": "#8e130c",
+                      "surface-variant": "#e4e2e4",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#dcd9dc",
+                      "secondary-container": "#94f4ad",
+                      "on-surface-variant": "#59413d",
+                      "on-primary-container": "#ffe5e1",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-container-highest": "#e4e2e4",
+                      "primary-fixed-dim": "#ffb4a9",
+                      "tertiary-fixed": "#c0e8ff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#004d66",
+                      "tertiary-fixed-dim": "#80d0f8",
+                      "tertiary-container": "#007296",
+                      "on-tertiary-container": "#d3eeff",
+                      "surface-bright": "#fcf8fb",
+                      "surface-container": "#f0edef",
+                      "surface-container-low": "#f6f3f5",
+                      "background": "#fcf8fb",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed": "#00210d",
+                      "on-secondary": "#ffffff",
+                      "primary": "#9e2016",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "surface": "#fcf8fb",
+                      "tertiary": "#005875",
+                      "on-secondary-container": "#00723a",
+                      "outline-variant": "#e1bfb9",
+                      "surface-container-high": "#eae7ea",
+                      "on-primary-fixed": "#410000",
+                      "primary-fixed": "#ffdad5",
+                      "on-background": "#1b1b1d",
+                      "secondary-fixed": "#96f7b0",
+                      "on-tertiary-fixed": "#001e2b",
+                      "primary-container": "#c0392b",
+                      "secondary": "#006d38",
+                      "inverse-surface": "#303032",
+                      "surface-tint": "#b02d21",
+                      "on-surface": "#1b1b1d",
+                      "error-container": "#ffdad6",
+                      "outline": "#8d706c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "unit": "4px",
+                      "margin-desktop": "48px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "42px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .blueprint-grid {
+            background-image: linear-gradient(to right, rgba(28, 28, 30, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(28, 28, 30, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .eq-bar {
+            animation: bounce 1.2s ease infinite alternate;
+        }
+        @keyframes bounce {
+            10% { height: 20%; }
+            30% { height: 100%; }
+            60% { height: 50%; }
+            80% { height: 75%; }
+            100% { height: 20%; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest dark:bg-surface-dim docked full-width top-0 sticky border-b border-outline-variant/10 backdrop-blur-md z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">PK Bikes</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Home</a>
+<a class="font-label-md text-label-md text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1" href="#">Compare</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Price Tracker</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Bike Finder Quiz</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">About</a>
+</nav>
+<button class="font-label-md text-label-md text-primary dark:text-inverse-primary opacity-80 scale-95 transition-all hidden md:block">Login / Register</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 blueprint-grid">
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Left: Sticky Gallery -->
+<div class="md:w-1/2 w-full md:sticky top-24 self-start h-auto">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 p-4 relative group">
+<img alt="Honda CB 150F Motorcycle" class="w-full h-auto rounded-lg object-cover mix-blend-multiply" data-alt="A sleek, modern red Honda CB 150F motorcycle parked in a stark, well-lit studio environment. The lighting is high-key white, reflecting off the polished metallic engine parts and vibrant red fairings. The background is an abstract, minimalist light-mode space, highlighting the mechanical precision of the bike. The aesthetic is modern, corporate, and performance-oriented." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6dqJTlf5-g9jFHgOfpy-Ssfih6VJXByTBiS7srkuHJKaCIewCOzt6XiYd5CQANvuZZcBO-UP554cASrIrKmsbqRSBwB-uyy1aujdex_J--GKucPxul7Ny4qwvXXmstG9VxX8cpvxESq19qb_NB5QlKbDlimye5eSFtO5gXOtlvY3vcsnDdSQVnX0f2EqZvnh2ew9v-RDioYG5qFoOG2wlcvd9hOZuf_qLI6IZsV9FBHEFFS3M1gZ7F_kZBx6S-e3i3siH-0eYVkHD"/>
+<button class="absolute top-6 right-6 bg-surface-container-lowest p-2 rounded-full border border-outline-variant/20 shadow-sm hover:text-primary transition-colors group-hover:opacity-100 opacity-0 md:opacity-100">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="flex gap-4 mt-4 overflow-x-auto pb-2">
+<div class="w-24 h-20 flex-shrink-0 bg-surface-container rounded-lg border-2 border-primary overflow-hidden cursor-pointer">
+<img alt="Thumbnail 1" class="w-full h-full object-cover" data-alt="Close-up shot of the Honda CB 150F front tire and disc brake assembly. High-key studio lighting emphasizes the silver metallic finish and intricate mechanical details against a clean white background. Modern, technical blueprint aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtLVXC5vB3sGahJeTqR91T9gkmCAb7qU5xEiquA9sZiEmfXhEpfl4_3v5_OShbMuhJ2MYRNhY0ts2RZWIqz_21LhicQlKG6dDy5pBvNmFUrqvSAzxnRvRnJM-QPZfcUeuYgqb2tOzTFyv1Ul5lJz_MQ-7nQ4jjCFszZr1hwENSgbVlY4cteFQkeh_plwo-SrFkvNFw6NpLCEqWDPdkmm9S1SZYG7SRq2F7QesSm6a_PAPV948mYUXbOhzRnlwmlamq9PDMqOW7lhks"/>
+</div>
+<div class="w-24 h-20 flex-shrink-0 bg-surface-container rounded-lg border border-outline-variant/20 overflow-hidden cursor-pointer hover:border-primary/50 transition-colors">
+<img alt="Thumbnail 2" class="w-full h-full object-cover" data-alt="Detailed view of the Honda CB 150F fuel tank and dashboard. The vibrant red tank contrasts with the modern digital display. Bright, diffused lighting highlights the curves and technical readouts. Clean, high-utility corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf5An6bev5Rl-ypL1CmnrN_guz9543uPQJgbihUrbGbgGi4gkZkUFwU8P1VgzRbB-LUoKGrdelDXBIc0BITnFa0q2BTdCEsZQSfkWZi2VWq6F3GxyyLKUpJeF9FJrytDVS5S7iZ8UGPaU6YyV5uPZcmsTUmq3aw8BQBWTfiSih4sTd2z9hFVJLJ_3OA5Spp-R0Cg8eniYecZYNQYBm7Vn38TwclrT_FTgnTMTaIYu45RJdG6HLKl7ALMJOrKZONla13STrXp7iC4V4"/>
+</div>
+<div class="w-24 h-20 flex-shrink-0 bg-surface-container rounded-lg border border-outline-variant/20 overflow-hidden cursor-pointer hover:border-primary/50 transition-colors">
+<img alt="Thumbnail 3" class="w-full h-full object-cover" data-alt="Rear view of the Honda CB 150F showing the exhaust pipe and tail light. Studio lighting reflects off the chrome exhaust. The setting is minimalist and bright, focusing purely on the motorcycle's engineering. National Kinetic performance vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCB0KIZRd5VE3rxOteXw-X3VHE5bYHt40o0pDQ0J1pQhloQxzhyDc3NdpCk2u6CgZEf9NIRvMAFTknfT0Jte2i7WZ7Yv5tRBapEBFbm_htkFnfsZ-kWlpHV-r_kxy9FkBDiYFuV6XHrZnMIZ1lJAcE4IcU6bOcNxgjuSdL3Bhv6Dt5iuOYApgnGxvEg_FnfHdB-QAwPxCxvOIo2Z-0XZjX28a57b0b9bmE_GDQmKxVlvUB94EKlHgfEkQyGOPqrvhTdxCSziuJYLV1"/>
+</div>
+</div>
+</div>
+<!-- Right: Details & Specs -->
+<div class="md:w-1/2 w-full flex flex-col gap-8">
+<!-- Header Info -->
+<div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-[#1C1C1E] text-white px-3 py-1 rounded-full font-label-sm text-label-sm">Honda</span>
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-sm text-label-sm">2024</span>
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm border border-outline-variant/30">150 CC</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-2">Honda CB 150F</h1>
+<p class="font-headline-md text-headline-md text-primary">Rs. 493,900</p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md py-4 px-6 rounded-xl flex justify-center items-center gap-3 transition-colors shadow-[0_4px_14px_0_rgba(158,32,22,0.39)] group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="play_circle">play_circle</span>
+                        Play Engine Sound
+                        <div class="flex items-end gap-1 h-4 ml-2">
+<div class="w-1 bg-white/70 rounded-full eq-bar" style="animation-delay: 0.1s"></div>
+<div class="w-1 bg-white/70 rounded-full eq-bar" style="animation-delay: 0.2s"></div>
+<div class="w-1 bg-white/70 rounded-full eq-bar" style="animation-delay: 0.3s"></div>
+<div class="w-1 bg-white/70 rounded-full eq-bar" style="animation-delay: 0.4s"></div>
+</div>
+</button>
+<button class="w-full bg-surface-container-lowest border border-secondary text-secondary hover:bg-secondary/5 font-label-md text-label-md py-4 px-6 rounded-xl flex justify-center items-center gap-2 transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                        Add to Compare
+                    </button>
+</div>
+<!-- Tabs -->
+<div class="border-b border-outline-variant/20 mt-4">
+<div class="flex gap-8">
+<button class="pb-2 font-label-md text-label-md text-primary border-b-[3px] border-primary translate-y-[1px]">Overview</button>
+<button class="pb-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Price History</button>
+<button class="pb-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Reviews</button>
+</div>
+</div>
+<!-- Full Specs Table (Bento Grid Style) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 hover:border-primary hover:-translate-y-1 transition-all duration-300">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="settings">settings</span>Engine</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">4 Stroke SOHC Air Cooled w/ Balancer</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 hover:border-primary hover:-translate-y-1 transition-all duration-300">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="speed">speed</span>Top Speed</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">120 KM/H</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 hover:border-primary hover:-translate-y-1 transition-all duration-300">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="bolt">bolt</span>Power</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">11.4 HP @ 8000.0 RPM</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 hover:border-primary hover:-translate-y-1 transition-all duration-300">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="directions_bike">directions_bike</span>Torque</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">12.0 Nm @ 6000.0 RPM</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 hover:border-primary hover:-translate-y-1 transition-all duration-300 col-span-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="local_gas_station">local_gas_station</span>Fuel Capacity &amp; Mileage</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">13.0 L | 35.0 KM/L</p>
+</div>
+</div>
+<!-- Review Section Snippet -->
+<div class="mt-8">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md">User Reviews</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold">4.2</span>
+<span class="text-on-surface-variant text-sm font-normal">(128)</span>
+</div>
+</div>
+<button class="w-full border border-outline-variant/30 bg-surface-container-lowest text-on-surface font-label-md text-label-md py-3 px-6 rounded-lg flex justify-center items-center gap-2 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+                        Write a Review
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface full-width border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-on-surface dark:text-inverse-on-surface mb-4 md:mb-0">PK Bikes</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant mb-4 md:mb-0 text-center">© 2024 Pakistan Bikes. Engineered for National Kinetic Performance.</p>
+<nav class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Contact Us</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Dealer Network</a>
+</nav>
+</div>
+</footer>
+</body></html>

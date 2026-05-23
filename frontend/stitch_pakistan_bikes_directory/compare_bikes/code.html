@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PK Bikes - Compare</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb4a9",
+                        "on-secondary-fixed-variant": "#005228",
+                        "secondary-fixed-dim": "#7bda96",
+                        "on-primary-fixed-variant": "#8e130c",
+                        "surface-variant": "#e4e2e4",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dcd9dc",
+                        "secondary-container": "#94f4ad",
+                        "on-surface-variant": "#59413d",
+                        "on-primary-container": "#ffe5e1",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-highest": "#e4e2e4",
+                        "primary-fixed-dim": "#ffb4a9",
+                        "tertiary-fixed": "#c0e8ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004d66",
+                        "tertiary-fixed-dim": "#80d0f8",
+                        "tertiary-container": "#007296",
+                        "on-tertiary-container": "#d3eeff",
+                        "surface-bright": "#fcf8fb",
+                        "surface-container": "#f0edef",
+                        "surface-container-low": "#f6f3f5",
+                        "background": "#fcf8fb",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#00210d",
+                        "on-secondary": "#ffffff",
+                        "primary": "#9e2016",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "surface": "#fcf8fb",
+                        "tertiary": "#005875",
+                        "on-secondary-container": "#00723a",
+                        "outline-variant": "#e1bfb9",
+                        "surface-container-high": "#eae7ea",
+                        "on-primary-fixed": "#410000",
+                        "primary-fixed": "#ffdad5",
+                        "on-background": "#1b1b1d",
+                        "secondary-fixed": "#96f7b0",
+                        "on-tertiary-fixed": "#001e2b",
+                        "primary-container": "#c0392b",
+                        "secondary": "#006d38",
+                        "inverse-surface": "#303032",
+                        "surface-tint": "#b02d21",
+                        "on-surface": "#1b1b1d",
+                        "error-container": "#ffdad6",
+                        "outline": "#8d706c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "4px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "display-lg": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "display-lg-mobile": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom styles for kinetic lift and smooth transitions */
+        .kinetic-lift {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .kinetic-lift:hover {
+            transform: translateY(-4px);
+            border-color: #9e2016; /* primary */
+        }
+        
+        /* Blueprint grid background for subtle texture */
+        .blueprint-bg {
+            background-image: linear-gradient(#e1bfb9 1px, transparent 1px), linear-gradient(90deg, #e1bfb9 1px, transparent 1px);
+            background-size: 24px 24px;
+            background-color: transparent;
+            opacity: 0.05;
+        }
+
+        /* Hide scrollbar for clean sticky header if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex flex-col relative">
+<!-- Blueprint Background Overlay -->
+<div class="fixed inset-0 pointer-events-none blueprint-bg z-[-1]"></div>
+<!-- TopNavBar from JSON -->
+<nav class="bg-surface-container-lowest border-b border-outline-variant/10 backdrop-blur-md docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="text-headline-md font-headline-md font-bold text-primary" href="#">
+                PK Bikes
+            </a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Compare</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Price Tracker</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Bike Finder Quiz</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">About</a>
+</div>
+<!-- Trailing Action -->
+<button class="hidden md:block font-label-md text-label-md bg-primary text-on-primary px-6 py-2 rounded-full hover:bg-primary/90 transition-colors">
+                Login / Register
+            </button>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Header Section -->
+<header class="mb-12">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4">
+                Technical Specification Matrix
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Align national heritage with mechanical precision. Select two models below to initiate a granular side-by-side performance analysis.
+            </p>
+</header>
+<!-- Comparison Grid Container -->
+<div class="relative w-full overflow-x-auto no-scrollbar">
+<div class="min-w-[800px] pb-8"> <!-- Minimum width ensures grid doesn't squash too much on small screens -->
+<!-- Sticky Selection Header -->
+<div class="grid grid-cols-12 gap-gutter mb-8 sticky top-[72px] bg-background/95 backdrop-blur-md z-40 py-4 border-b border-outline-variant/20 shadow-[0_4px_24px_-12px_rgba(0,0,0,0.1)]">
+<!-- Label Column -->
+<div class="col-span-3 flex items-end pb-4">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Select Models</span>
+</div>
+<!-- Column 1: Winning Bike Selection -->
+<div class="col-span-4 relative flex flex-col gap-4">
+<!-- Winner Badge -->
+<div class="absolute -top-6 left-0 bg-secondary text-on-secondary font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1 shadow-sm z-10">
+<span class="material-symbols-outlined" style="font-size: 14px; font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                            OVERALL WINNER
+                        </div>
+<!-- Dropdown -->
+<div class="relative group">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/30 text-on-surface font-headline-md text-headline-md p-4 pr-12 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors cursor-pointer kinetic-lift">
+<option>National Kinetic 125cc</option>
+<option>Urban Commuter 70</option>
+<option>Heritage Classic 150</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-hover:text-primary pointer-events-none">expand_more</span>
+</div>
+<!-- Bike Image Preview (Placeholder with prompt) -->
+<div class="w-full h-48 bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10 flex items-center justify-center p-4">
+<img alt="National Kinetic 125cc" class="w-full h-full object-contain drop-shadow-lg mix-blend-multiply" data-alt="A sleek, modern 125cc commuter motorcycle positioned in profile against a pure white studio background. The bike features a deep crimson red fuel tank with sharp, angular metallic decals suggesting speed and precision. Its black alloy wheels and chrome exhaust gleam under bright, high-key studio lighting. The overall visual style is ultra-crisp, corporate, and technical, resembling a high-end product showcase for a Pakistani domestic market." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7KzgURGpvKjqLjM73aAK5kYMapw80lM-uzQeq4S1IOqiEbRVJRgLNzq6OZgDs6n3-kXPEd7DbYu56TPYWHZDc246wdmeiizjGOC53FDESF3A8UgzHvSY9GWdhILfTYO_gyzB8z59zKpS4GsrgE6e2mLeN05J5UN3JIN4Jmvo27h22o_x4311AHdHpkdt_BhVyv2ATejG5pPx9w57F_JPGfcMt0KbPK7-tDkVED6F8vu6sFB8Fj8kq841WWB90Yqvductzrgd4Mg-C"/>
+</div>
+</div>
+<!-- Divider (Visual only) -->
+<div class="col-span-1 flex items-center justify-center">
+<div class="w-[1px] h-full bg-outline-variant/20"></div>
+</div>
+<!-- Column 2: Losing Bike Selection -->
+<div class="col-span-4 flex flex-col gap-4">
+<!-- Dropdown -->
+<div class="relative group">
+<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant/30 text-on-surface font-headline-md text-headline-md p-4 pr-12 rounded-xl focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors cursor-pointer kinetic-lift">
+<option>Standard Commuter 100cc</option>
+<option>National Kinetic 125cc</option>
+<option>Heritage Classic 150</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-hover:text-primary pointer-events-none">expand_more</span>
+</div>
+<!-- Bike Image Preview (Placeholder with prompt) -->
+<div class="w-full h-48 bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10 flex items-center justify-center p-4 opacity-80">
+<img alt="Standard Commuter 100cc" class="w-full h-full object-contain drop-shadow-md mix-blend-multiply grayscale-[20%]" data-alt="A standard 100cc utility motorcycle shown in profile on a pristine white background. The motorcycle has a basic, functional design with a dark grey fuel tank and standard wire-spoke wheels. The lighting is even and flat, typical of a technical specification catalog. The overall mood is utilitarian and slightly subdued compared to high-performance models, fitting a clear, modern product comparison aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIIEb17uv9GN7t2rmUceFloCa8_OWl0wKJyNG_XacaMTP-E6AEAH6eimQ0DtffQjmpa4cHV0hJDLPOP2RDbEcuLFPt8_Lc-MPR5zzSOAg6v3EvwODVsN9n4xKD8wjr-zSUYxrHgCKoX2Alr1om71cwWkMYEzS5C7ZRl_frzVsWDwo9ahBiocGfsq4EdgpV3fslQyDhxLQEFw5gKC62IKPf-cb2Zkr2TQzknkYx8k8SaCzDosKLvK3WhSCGhOg_G4BqyarEGhtSoU7z"/>
+</div>
+</div>
+</div>
+<!-- Data Section: Engine -->
+<div class="mb-12">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2 border-b border-outline-variant/20 pb-2">
+<span class="material-symbols-outlined text-primary">engineering</span>
+                        Engine &amp; Transmission
+                    </h3>
+<div class="flex flex-col gap-2">
+<!-- Row 1 -->
+<div class="grid grid-cols-12 gap-gutter items-center py-3 px-4 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="col-span-3 font-label-md text-label-md text-on-surface-variant">Displacement</div>
+<div class="col-span-4 bg-secondary-container text-on-secondary-container font-label-md text-label-md p-3 rounded-lg flex items-center justify-between border border-secondary/20">
+                                124.8 cc
+                                <span class="material-symbols-outlined text-secondary" style="font-size: 18px;">check_circle</span>
+</div>
+<div class="col-span-1"></div>
+<div class="col-span-4 bg-error-container text-on-error-container font-body-md text-body-md p-3 rounded-lg border border-error/10">
+                                97.2 cc
+                            </div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 gap-gutter items-center py-3 px-4 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="col-span-3 font-label-md text-label-md text-on-surface-variant">Max Power</div>
+<div class="col-span-4 bg-secondary-container text-on-secondary-container font-label-md text-label-md p-3 rounded-lg flex items-center justify-between border border-secondary/20">
+                                11.0 HP @ 8500 rpm
+                                <span class="material-symbols-outlined text-secondary" style="font-size: 18px;">check_circle</span>
+</div>
+<div class="col-span-1"></div>
+<div class="col-span-4 bg-error-container text-on-error-container font-body-md text-body-md p-3 rounded-lg border border-error/10">
+                                7.5 HP @ 8000 rpm
+                            </div>
+</div>
+<!-- Row 3 (Tie/Neutral) -->
+<div class="grid grid-cols-12 gap-gutter items-center py-3 px-4 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="col-span-3 font-label-md text-label-md text-on-surface-variant">Transmission</div>
+<div class="col-span-4 bg-surface-container font-body-md text-body-md p-3 rounded-lg text-on-surface">
+                                5-Speed Manual
+                            </div>
+<div class="col-span-1"></div>
+<div class="col-span-4 bg-surface-container font-body-md text-body-md p-3 rounded-lg text-on-surface">
+                                4-Speed Manual
+                            </div>
+</div>
+</div>
+</div>
+<!-- Data Section: Dimensions -->
+<div class="mb-12">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2 border-b border-outline-variant/20 pb-2">
+<span class="material-symbols-outlined text-primary">straighten</span>
+                        Dimensions &amp; Capacity
+                    </h3>
+<div class="flex flex-col gap-2">
+<!-- Row 1 -->
+<div class="grid grid-cols-12 gap-gutter items-center py-3 px-4 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="col-span-3 font-label-md text-label-md text-on-surface-variant">Fuel Tank</div>
+<div class="col-span-4 bg-secondary-container text-on-secondary-container font-label-md text-label-md p-3 rounded-lg flex items-center justify-between border border-secondary/20">
+                                12.0 Liters
+                                <span class="material-symbols-outlined text-secondary" style="font-size: 18px;">check_circle</span>
+</div>
+<div class="col-span-1"></div>
+<div class="col-span-4 bg-error-container text-on-error-container font-body-md text-body-md p-3 rounded-lg border border-error/10">
+                                9.5 Liters
+                            </div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 gap-gutter items-center py-3 px-4 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="col-span-3 font-label-md text-label-md text-on-surface-variant">Ground Clearance</div>
+<div class="col-span-4 bg-secondary-container text-on-secondary-container font-label-md text-label-md p-3 rounded-lg flex items-center justify-between border border-secondary/20">
+                                160 mm
+                                <span class="material-symbols-outlined text-secondary" style="font-size: 18px;">check_circle</span>
+</div>
+<div class="col-span-1"></div>
+<div class="col-span-4 bg-error-container text-on-error-container font-body-md text-body-md p-3 rounded-lg border border-error/10">
+                                145 mm
+                            </div>
+</div>
+<!-- Row 3 (Weight - Lower is usually better, showing logic twist) -->
+<div class="grid grid-cols-12 gap-gutter items-center py-3 px-4 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="col-span-3 font-label-md text-label-md text-on-surface-variant">Dry Weight</div>
+<div class="col-span-4 bg-error-container text-on-error-container font-body-md text-body-md p-3 rounded-lg border border-error/10">
+                                115 kg
+                            </div>
+<div class="col-span-1"></div>
+<div class="col-span-4 bg-secondary-container text-on-secondary-container font-label-md text-label-md p-3 rounded-lg flex items-center justify-between border border-secondary/20">
+                                102 kg
+                                <span class="material-symbols-outlined text-secondary" style="font-size: 18px;">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Value Proposition Area -->
+<div class="mt-16 bg-surface-container p-8 rounded-xl border border-outline-variant/20 flex flex-col items-center text-center">
+<h4 class="font-headline-lg text-headline-lg text-on-surface mb-2">Ready to secure national performance?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-md">Find your nearest certified dealer and track real-time market pricing.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-8 py-3 rounded-full hover:bg-primary/90 transition-colors kinetic-lift shadow-sm">
+                            Locate Dealer
+                        </button>
+<button class="bg-surface-container-lowest text-primary border border-primary font-label-md text-label-md px-8 py-3 rounded-full hover:bg-primary/10 transition-colors kinetic-lift">
+                            Check Price Tracker
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer from JSON -->
+<footer class="bg-surface-container-highest border-t border-outline-variant/20 full-width mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<!-- Footer Brand & Copyright -->
+<div class="mb-6 md:mb-0 flex flex-col items-center md:items-start gap-2">
+<span class="text-headline-md font-headline-md font-bold text-on-surface">
+                    PK Bikes
+                </span>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">
+                    © 2024 Pakistan Bikes. Engineered for National Kinetic Performance.
+                </p>
+</div>
+<!-- Footer Links -->
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Dealer Network</a>
+</div>
+</div>
+</footer>
+</body></html>

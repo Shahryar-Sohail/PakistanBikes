@@ -1,15 +1,93 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/flowbite/**/*.js", // 👈 must include this
-  ],
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "surface-container-lowest": "#ffffff",
+        "surface-container-highest": "#e4e2e4",
+        "surface-container-high": "#eae7ea",
+        "surface-container": "#f0edef",
+        "surface-container-low": "#f6f3f5",
+        "surface-variant": "#e4e2e4",
+        "surface-bright": "#fcf8fb",
+        "surface-dim": "#dcd9dc",
+        surface: "#fcf8fb",
+        background: "#fcf8fb",
+        "on-background": "#1b1b1d",
+        "on-surface": "#1b1b1d",
+        "on-surface-variant": "#59413d",
+        primary: "#9e2016",
+        "on-primary": "#ffffff",
+        "primary-container": "#c0392b",
+        "on-primary-container": "#ffe5e1",
+        "primary-fixed": "#ffdad5",
+        "primary-fixed-dim": "#ffb4a9",
+        "on-primary-fixed": "#410000",
+        "on-primary-fixed-variant": "#8e130c",
+        "inverse-primary": "#ffb4a9",
+        secondary: "#006d38",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#94f4ad",
+        "on-secondary-container": "#00723a",
+        "secondary-fixed": "#96f7b0",
+        "secondary-fixed-dim": "#7bda96",
+        "on-secondary-fixed": "#00210d",
+        "on-secondary-fixed-variant": "#005228",
+        tertiary: "#005875",
+        "on-tertiary": "#ffffff",
+        "tertiary-container": "#007296",
+        "on-tertiary-container": "#d3eeff",
+        "tertiary-fixed": "#c0e8ff",
+        "tertiary-fixed-dim": "#80d0f8",
+        "on-tertiary-fixed": "#001e2b",
+        "on-tertiary-fixed-variant": "#004d66",
+        outline: "#8d706c",
+        "outline-variant": "#e1bfb9",
+        error: "#ba1a1a",
+        "on-error": "#ffffff",
+        "error-container": "#ffdad6",
+        "on-error-container": "#93000a",
+        "inverse-surface": "#303032",
+        "inverse-on-surface": "#f3f0f2",
+        "surface-tint": "#b02d21",
+      },
+      spacing: {
+        "margin-mobile": "16px",
+        "margin-desktop": "48px",
+        gutter: "24px",
+        "container-max": "1280px",
+        unit: "4px",
+      },
+      maxWidth: {
+        "container-max": "1280px",
+      },
+      fontSize: {
+        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+        "label-md": [
+          "14px",
+          { lineHeight: "20px", fontWeight: "600", letterSpacing: "0.05em" },
+        ],
+        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+        "headline-lg": [
+          "32px",
+          { lineHeight: "40px", fontWeight: "700", letterSpacing: "-0.01em" },
+        ],
+        "display-lg-mobile": [
+          "36px",
+          { lineHeight: "42px", fontWeight: "700", letterSpacing: "-0.02em" },
+        ],
+        "display-lg": [
+          "48px",
+          { lineHeight: "56px", fontWeight: "700", letterSpacing: "-0.02em" },
+        ],
+      },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui"],
+      },
+    },
   },
-  plugins: [
-    require('flowbite/plugin'), // 👈 plugin included
-    require("daisyui") // 👈 plugin included
-  ],
-}
+  plugins: [require("daisyui")],
+};
