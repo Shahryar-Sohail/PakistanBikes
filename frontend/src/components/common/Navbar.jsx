@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "motion/react";
 
 const NAV_LINKS = [
   { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
   { label: "Compare", to: "/compare" },
   { label: "Price Tracker", to: "/price-tracker" },
   { label: "Bike Finder Quiz", to: "/bike-finder-quiz" },
-  { label: "About", to: "/about" },
 ];
 
 const navCls = ({ isActive }) =>
