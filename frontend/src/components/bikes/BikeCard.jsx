@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { formatPrice, formatCC } from "../../utils/formatters";
 
 const SpecBadge = ({ icon, label, accent }) => (
@@ -56,9 +57,12 @@ const BikeCard = ({ bike }) => (
           </span>
           Play Sound
         </button>
-        <button className="w-full py-3 bg-primary text-on-primary text-label-md rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+        <Link
+          to={`/bike/${bike.id}`}
+          className="w-full py-3 bg-primary text-on-primary text-label-md rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm text-center block"
+        >
           View Details
-        </button>
+        </Link>
       </div>
     </div>
   </article>

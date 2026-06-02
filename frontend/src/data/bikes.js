@@ -1,4 +1,12 @@
 // Images sourced from design mockup; replace with real assets when available.
+const CB150F_MAIN =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuA6dqJTlf5-g9jFHgOfpy-Ssfih6VJXByTBiS7srkuHJKaCIewCOzt6XiYd5CQANvuZZcBO-UP554cASrIrKmsbqRSBwB-uyy1aujdex_J--GKucPxul7Ny4qwvXXmstG9VxX8cpvxESq19qb_NB5QlKbDlimye5eSFtO5gXOtlvY3vcsnDdSQVnX0f2EqZvnh2ew9v-RDioYG5qFoOG2wlcvd9hOZuf_qLI6IZsV9FBHEFFS3M1gZ7F_kZBx6S-e3i3siH-0eYVkHD";
+const CB150F_T1 =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuDtLVXC5vB3sGahJeTqR91T9gkmCAb7qU5xEiquA9sZiEmfXhEpfl4_3v5_OShbMuhJ2MYRNhY0ts2RZWIqz_21LhicQlKG6dDy5pBvNmFUrqvSAzxnRvRnJM-QPZfcUeuYgqb2tOzTFyv1Ul5lJz_MQ-7nQ4jjCFszZr1hwENSgbVlY4cteFQkeh_plwo-SrFkvNFw6NpLCEqWDPdkmm9S1SZYG7SRq2F7QesSm6a_PAPV948mYUXbOhzRnlwmlamq9PDMqOW7lhks";
+const CB150F_T2 =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuCf5An6bev5Rl-ypL1CmnrN_guz9543uPQJgbihUrbGbgGi4gkZkUFwU8P1VgzRbB-LUoKGrdelDXBIc0BITnFa0q2BTdCEsZQSfkWZi2VWq6F3GxyyLKUpJeF9FJrytDVS5S7iZ8UGPaU6YyV5uPZcmsTUmq3aw8BQBWTfiSih4sTd2z9hFVJLJ_3OA5Spp-R0Cg8eniYecZYNQYBm7Vn38TwclrT_FTgnTMTaIYu45RJdG6HLKl7ALMJOrKZONla13STrXp7iC4V4";
+const CB150F_T3 =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuCCB0KIZRd5VE3rxOteXw-X3VHE5bYHt40o0pDQ0J1pQhloQxzhyDc3NdpCk2u6CgZEf9NIRvMAFTknfT0Jte2i7WZ7Yv5tRBapEBFbm_htkFnfsZ-kWlpHV-r_kxy9FkBDiYFuV6XHrZnMIZ1lJAcE4IcU6bOcNxgjuSdL3Bhv6Dt5iuOYApgnGxvEg_FnfHdB-QAwPxCxvOIo2Z-0XZjX28a57b0b9bmE_GDQmKxVlvUB94EKlHgfEkQyGOPqrvhTdxCSziuJYLV1";
 const CD70_IMG =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuDYwtBVkEX_M_dv6Q9yUvzmcw9fA6S9fL2Xr_VkE2XSAZU_BsdaaXYh97aDjE5ckPzZmmgVatVIzOCfxfZiVkYPRl3CbqmedDmaDMGkSq722Gn_9AcTIKV3Ch67GFnjZ8kGRs2yspUXPp-5fOi3XnZN7F8KYGWYGV2yAhJjsAbVpOYSRyq9mHmTHAUztPjz9BsdpbolRRgxfhfCeCdOJXvxfIjk7vU5tVhjsi9emzxJVTv0LdcaE_Jh94vDU5EvlXf9ozrWjJpICZGe";
 const YBR_IMG =
@@ -20,6 +28,7 @@ export const bikes = [
     image: CD70_IMG,
     specs: {
       engine: "70cc 4-stroke OHV",
+      topSpeed: "80 KM/H",
       power: "4.4 bhp",
       torque: "4.8 Nm",
       transmission: "3-speed",
@@ -46,6 +55,7 @@ export const bikes = [
     image: null,
     specs: {
       engine: "124.1cc 4-stroke OHC",
+      topSpeed: "110 KM/H",
       power: "9.1 bhp",
       torque: "9.5 Nm",
       transmission: "5-speed",
@@ -69,9 +79,11 @@ export const bikes = [
     year: 2024,
     type: "sport-commuter",
     fuelAvg: "35+ km/l",
-    image: null,
+    image: CB150F_MAIN,
+    gallery: [CB150F_T1, CB150F_T2, CB150F_T3],
     specs: {
       engine: "149.16cc 4-stroke SOHC",
+      topSpeed: "120 KM/H",
       power: "13.5 bhp",
       torque: "12.8 Nm",
       transmission: "5-speed",
@@ -98,6 +110,7 @@ export const bikes = [
     image: YBR_IMG,
     specs: {
       engine: "124cc 4-stroke SOHC",
+      topSpeed: "115 KM/H",
       power: "10 bhp",
       torque: "9.7 Nm",
       transmission: "5-speed",
@@ -124,6 +137,7 @@ export const bikes = [
     image: SZK_IMG,
     specs: {
       engine: "150cc 4-stroke SOHC",
+      topSpeed: "120 KM/H",
       power: "13 bhp",
       torque: "12 Nm",
       transmission: "5-speed",
@@ -150,6 +164,7 @@ export const bikes = [
     image: null,
     specs: {
       engine: "70cc 4-stroke",
+      topSpeed: "75 KM/H",
       power: "4 bhp",
       torque: "4.5 Nm",
       transmission: "3-speed",
@@ -176,6 +191,7 @@ export const bikes = [
     image: null,
     specs: {
       engine: "124cc 4-stroke SOHC",
+      topSpeed: "115 KM/H",
       power: "10.5 bhp",
       torque: "10 Nm",
       transmission: "5-speed",
@@ -202,6 +218,7 @@ export const bikes = [
     image: null,
     specs: {
       engine: "100cc 4-stroke",
+      topSpeed: "90 KM/H",
       power: "6 bhp",
       torque: "6.5 Nm",
       transmission: "4-speed",

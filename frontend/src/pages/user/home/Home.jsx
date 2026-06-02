@@ -1,8 +1,8 @@
 import { useState } from "react";
-import useBikes from "../../hooks/useBikes";
-import HeroSection from "../../components/home/HeroSection";
-import BikeFilter from "../../components/bikes/BikeFilter";
-import BikeGrid from "../../components/bikes/BikeGrid";
+import useBikes from "../../../hooks/useBikes";
+import HeroSection from "../../../components/home/HeroSection";
+import BikeFilter from "../../../components/bikes/BikeFilter";
+import BikeGrid from "../../../components/bikes/BikeGrid";
 
 const Home = () => {
   const [filters, setFilters] = useState({});
